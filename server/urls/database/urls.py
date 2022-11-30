@@ -1,4 +1,4 @@
-urls = {
+urls = [{
         "long_url": "www.google.com",
         "short_url": "fgrhti"
         },{
@@ -10,4 +10,4 @@ urls = {
         },{
         "long_url": "https://www.youtube.com/watch?v=GihQAC1I39Q",
         "short_url": "nhgj37"
-        }
+        }]
