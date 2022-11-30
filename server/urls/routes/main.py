@@ -15,11 +15,9 @@ def get_and_create():
             "long_url": request.json['long_url'],
             "short_url": new_url
         }
-
-        return obj
-        # urls.append(jsonify(obj))
-        # print(urls)
-        # return urls
+        urls.append(obj)
+        print(urls)
+        return urls
     
     if request.method =="GET":
         return jsonify(urls)
