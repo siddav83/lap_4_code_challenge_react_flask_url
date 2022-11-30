@@ -9,6 +9,8 @@ main_routes = Blueprint("main",__name__)
 @main_routes.route('/home', methods=['GET','POST'])
 def get_and_create():
     if request.method == "POST":
+        print("is this working?")
+        print(request.json)
         new_url = short_url_creator()
         obj = {
             "long_url": request.json,

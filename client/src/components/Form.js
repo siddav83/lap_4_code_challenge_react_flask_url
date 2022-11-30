@@ -4,11 +4,17 @@ const Form = () => {
 
     const [url, setUrl] = useState("")
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('url sent')
+
+        await fetch('http://127.0.0.1:5000/home', {  
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(url) 
+        })
         setUrl('')
-        
     }
 
     const updateInput = e => {
@@ -20,7 +26,7 @@ const Form = () => {
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="input-name">Enter A Url</label>
-            <input id="input-name" type="text" value={url}  onChange={updateInput} />
+            <input id="input-name" type="text" value={url} onChange={updateInput} />
             <input type="Submit" value="Search" />
         </form>
     )
