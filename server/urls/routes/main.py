@@ -9,6 +9,7 @@ main_routes = Blueprint("main",__name__)
 @main_routes.route('/home', methods=['GET','POST'])
 def get_and_create():
     if request.method == "POST":
+        # print(request.json)
         print((request.json['long_url']))
         new_url = short_url_creator()
         obj = {
@@ -18,10 +19,8 @@ def get_and_create():
         urls.append(obj)
         print(urls)
         return urls
-    
     if request.method =="GET":
-        return jsonify(urls)
+        return jsonify(urls),201 
         
-        return obj,201
     elif request.method == "GET":
         return jsonify(urls), 200

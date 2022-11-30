@@ -6,14 +6,18 @@ const Form = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const obj = {
+            long_url: url 
+        }
 
         await fetch('http://127.0.0.1:5000/home', {  
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(url) 
+            body: JSON.stringify(obj) 
         })
+        console.log("*****************",JSON.stringify(url))
         setUrl('')
     }
 
